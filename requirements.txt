@@ -4,3 +4,4 @@ segmentation-models==1.0.1
 opencv-python-headless==5.0.0.93
 numpy==2.5.2
 pillow==12.3.0
+huggingface_hub
