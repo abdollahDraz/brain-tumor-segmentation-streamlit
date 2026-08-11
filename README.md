@@ -1,9 +1,12 @@
-# brain-tumor-segmentation-streamlit
 # 🧠 Brain Tumor Segmentation
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://brain-tumor-segmentation-app-3bgwsdk9vxxy9vvrvdadui.streamlit.app/)
 
 AI-powered web application for **automatic brain tumor segmentation from MRI images**, built with **Deep Learning (U-Net + ResNet34 encoder)** and deployed with **Streamlit**.
 
 The app takes a single MRI slice as input and returns a **binary segmentation mask** highlighting the tumor region, allowing quick visual inspection of the affected area.
+
+🔗 **Live App:** [brain-tumor-segmentation-app.streamlit.app](https://brain-tumor-segmentation-app-3bgwsdk9vxxy9vvrvdadui.streamlit.app/)
 
 ---
 
@@ -21,7 +24,9 @@ The model was trained to detect and segment the following tumor types from MRI s
 
 ## 🚀 Demo
 
-The app is live and deployed on **Streamlit Cloud**. Below is a walkthrough of the app in action:
+The app is live and deployed on **Streamlit Cloud** → **[Try it here](https://brain-tumor-segmentation-app-3bgwsdk9vxxy9vvrvdadui.streamlit.app/)**
+
+Below is a walkthrough of the app in action:
 
 ### 1. Upload an MRI Image
 ![Upload MRI Image](assets/demo-1-upload.png)
