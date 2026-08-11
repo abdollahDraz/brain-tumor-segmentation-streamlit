@@ -72,7 +72,8 @@ Streamlit UI (Original Image + Predicted Mask side-by-side)
 | Framework | TensorFlow / Keras (`segmentation_models` library) |
 | Input Size | 256 x 256 x 3 |
 | Output | Binary segmentation mask |
-| Hosting | [Hugging Face Hub](https://huggingface.co/abdollah111/brain-tumor-segmentation) |
+| Hosting | [Hugging Face Hub](https://huggingface.co/abdollah111/brain-tumor-segmentation/tree/main) |
+| Direct Download | [`best_model.keras`](https://huggingface.co/abdollah111/brain-tumor-segmentation/blob/main/best_model.keras) |
 
 The model weights are **not stored in this repository**. Instead, they are pulled at runtime via `huggingface_hub.hf_hub_download`, which keeps the repository lightweight and avoids Git LFS limitations.
 
