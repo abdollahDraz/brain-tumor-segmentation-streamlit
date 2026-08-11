@@ -78,11 +78,38 @@ The model weights are **not stored in this repository**. Instead, they are pulle
 
 ---
 
-## 📊 Dataset
+## 📊 Dataset & EDA (Exploratory Data Analysis)
 
-The model was trained on an MRI brain tumor dataset containing labeled slices for the three tumor classes mentioned above (Glioma, Meningioma, Pituitary), each paired with a ground-truth segmentation mask.
+The model was trained on an MRI brain tumor dataset containing labeled slices for three tumor classes (Glioma, Meningioma, Pituitary), each paired with a ground-truth segmentation mask.
 
-> 📌 **Note:** A detailed Exploratory Data Analysis (EDA) — including class distribution, sample counts per tumor type, and image size statistics — is planned to be added here once the training notebook is published.
+### Class Distribution (Image–Mask Pairs)
+
+| Tumor Type | Image–Mask Pairs | Tumor Pixels % (avg) |
+|---|---|---|
+| Pituitary Tumor | 930 | 1.13% |
+| Meningioma | 708 | 2.17% |
+| Glioma | 554 | 1.85% |
+| **Total** | **2,192** | — |
+
+> ⚠️ **Imbalanced Dataset** — Pituitary tumor has significantly more samples than Glioma. Accuracy alone is not a reliable metric here; Dice / IoU is used instead to properly evaluate segmentation quality.
+
+### Data Quality Checks
+
+- ✅ **0 empty masks** across all three classes (every image has a valid, non-empty tumor mask).
+- ✅ **0 mismatches** between MRI images and their corresponding masks (every MRI has a matching mask, and vice versa).
+
+### Image Properties
+
+| Property | Value |
+|---|---|
+| Image Type | Grayscale |
+| Image Size | 512 × 512 |
+| Pixel Value Range (MRI) | 1 – 255 |
+| Pixel Value Range (Mask) | 3 – 255 |
+
+### Tumor Area Analysis
+
+Tumors occupy a **very small percentage of the total image area** (1.1% – 2.2% on average across classes), confirming this is a **small-object segmentation problem** — a key factor that guided the choice of loss function and evaluation metric during training.
 
 ---
 
@@ -111,7 +138,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The app will open automatically in your browser at `https://brain-tumor-segmentation-app-3bgwsdk9vxxy9vvrvdadui.streamlit.app/`.
+The app will open automatically in your browser at `http://localhost:8501`.
 
 ---
 
