@@ -6,6 +6,7 @@ import tensorflow as tf
 import segmentation_models as sm
 import cv2
 import numpy as np
+from huggingface_hub import hf_hub_download
 
 
 BACKBONE = "resnet34"           # Encoder
@@ -13,9 +14,15 @@ preprocess_input = sm.get_preprocessing(BACKBONE)
 
 
 # loading Model
-model  = tf.keras.models.load_model("best_model.keras" ,
-                                    compile=False
-                                    )
+model_path = hf_hub_download(
+    repo_id="abdollah111/brain-tumor-segmentation",
+    filename="best_model.keras"
+)
+
+model = tf.keras.models.load_model(
+    model_path,
+    compile=False
+)
 
 
 
