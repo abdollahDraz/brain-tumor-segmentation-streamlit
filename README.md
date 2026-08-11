@@ -111,6 +111,11 @@ The model was trained on an MRI brain tumor dataset containing labeled slices fo
 
 Tumors occupy a **very small percentage of the total image area** (1.1% – 2.2% on average across classes), confirming this is a **small-object segmentation problem** — a key factor that guided the choice of loss function and evaluation metric during training.
 
+### 📓 Notebooks
+
+- [`EDA_Tumer_Signification_.ipynb`](EDA_Tumer_Signification_.ipynb) — Full exploratory data analysis: class distribution, mask/image checks, pixel statistics.
+- [`Brian__Tumer.ipynb`](Brian__Tumer.ipynb) — Model building, training, and evaluation (U-Net + ResNet34).
+
 ---
 
 ## 🛠️ Tech Stack
